@@ -4,17 +4,17 @@ Imports DevExpress.XtraPivotGrid
 
 Namespace WinOlapRetrieveFieldsExample
     Partial Public Class Form1
-        Inherits Form
+        Inherits DevExpress.XtraEditors.XtraForm
 
         Public Sub New()
             InitializeComponent()
             ' Specifies the OLAP connection settings.
             pivotGridControl1.OLAPDataProvider = OLAPDataProvider.Adomd
-            pivotGridControl1.OLAPConnectionString = "Provider=MSOLAP;" & ControlChars.CrLf & _
-"                Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll; " & ControlChars.CrLf & _
-"                Initial catalog=Adventure Works DW Standard Edition;" & ControlChars.CrLf & _
-"                Cube name=Adventure Works;" & ControlChars.CrLf & _
-"                Query Timeout=100;"
+            pivotGridControl1.OLAPConnectionString = "Provider=MSOLAP;
+                Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll; 
+                Initial catalog=Adventure Works DW Standard Edition;
+                Cube name=Adventure Works;
+                Query Timeout=100;"
 
             ' Retrieves fields.
             pivotGridControl1.RetrieveFields(PivotArea.ColumnArea, False)
@@ -27,6 +27,13 @@ Namespace WinOlapRetrieveFieldsExample
             pivotGridControl1.Fields("[Date].[Fiscal].[Fiscal Year]").Area = PivotArea.ColumnArea
             pivotGridControl1.Fields("[Date].[Fiscal].[Fiscal Year]").Visible = True
             pivotGridControl1.Fields("[Measures].[Internet Sales Amount]").Visible = True
+
+            Dim dimensionField As New PivotGridField() With { _
+                .Caption = "Cleared Amount", _
+                .Area = PivotArea.DataArea _
+            }
+            dimensionField.OLAPExpression = "[Measures].[Internet Sales Amount] * 0.87"
+            pivotGridControl1.Fields.Add(dimensionField)
 
             ' Sets the Customization Forms style to Excel2007 with additional capabilities.
             pivotGridControl1.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007
