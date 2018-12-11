@@ -25,7 +25,7 @@
         Private Sub InitializeComponent()
             Dim pivotGridGroup1 As New DevExpress.XtraPivotGrid.PivotGridGroup()
             Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' pivotGridControl1
@@ -33,26 +33,23 @@
             Me.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
             pivotGridGroup1.Caption = "Date.Fiscal"
             pivotGridGroup1.Hierarchy = "[Date].[Fiscal]"
-            pivotGridGroup1.ShowNewValues = True
             Me.pivotGridControl1.Groups.AddRange(New DevExpress.XtraPivotGrid.PivotGridGroup() { pivotGridGroup1})
             Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
-            Me.pivotGridControl1.LookAndFeel.SkinName = "Office 2013 Light Gray"
-            Me.pivotGridControl1.LookAndFeel.UseDefaultLookAndFeel = False
             Me.pivotGridControl1.Name = "pivotGridControl1"
             Me.pivotGridControl1.OLAPConnectionString = ""
             Me.pivotGridControl1.OLAPDataProvider = DevExpress.XtraPivotGrid.OLAPDataProvider.Adomd
-            Me.pivotGridControl1.Size = New System.Drawing.Size(745, 437)
+            Me.pivotGridControl1.Size = New System.Drawing.Size(755, 439)
             Me.pivotGridControl1.TabIndex = 0
             ' 
             ' Form1
             ' 
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(745, 437)
+            Me.ClientSize = New System.Drawing.Size(755, 439)
             Me.Controls.Add(Me.pivotGridControl1)
             Me.Name = "Form1"
-            Me.Text = "DevExpress WinForms Application"
-            DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            Me.Text = "WinForms Pivot Grid OLAP Example"
+            CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
