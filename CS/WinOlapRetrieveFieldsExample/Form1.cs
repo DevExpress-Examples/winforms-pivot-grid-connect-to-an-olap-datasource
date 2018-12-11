@@ -4,7 +4,7 @@ using DevExpress.XtraPivotGrid;
 
 namespace WinOlapRetrieveFieldsExample
 {
-    public partial class Form1 : Form
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
         public Form1()
         {
@@ -29,6 +29,10 @@ namespace WinOlapRetrieveFieldsExample
             pivotGridControl1.Fields["[Date].[Fiscal].[Fiscal Year]"].Area = PivotArea.ColumnArea;
             pivotGridControl1.Fields["[Date].[Fiscal].[Fiscal Year]"].Visible = true;
             pivotGridControl1.Fields["[Measures].[Internet Sales Amount]"].Visible = true;
+
+            PivotGridField dimensionField = new PivotGridField() { Caption = "Cleared Amount", Area = PivotArea.DataArea };
+            dimensionField.OLAPExpression = "[Measures].[Internet Sales Amount] * 0.87";
+            pivotGridControl1.Fields.Add(dimensionField);
 
             // Sets the Customization Forms style to Excel2007 with additional capabilities.
             pivotGridControl1.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007;

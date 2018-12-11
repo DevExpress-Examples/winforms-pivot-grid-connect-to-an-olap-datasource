@@ -38,26 +38,23 @@
             this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             pivotGridGroup1.Caption = "Date.Fiscal";
             pivotGridGroup1.Hierarchy = "[Date].[Fiscal]";
-            pivotGridGroup1.ShowNewValues = true;
             this.pivotGridControl1.Groups.AddRange(new DevExpress.XtraPivotGrid.PivotGridGroup[] {
             pivotGridGroup1});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
-            this.pivotGridControl1.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            this.pivotGridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.pivotGridControl1.Name = "pivotGridControl1";
             this.pivotGridControl1.OLAPConnectionString = "";
             this.pivotGridControl1.OLAPDataProvider = DevExpress.XtraPivotGrid.OLAPDataProvider.Adomd;
-            this.pivotGridControl1.Size = new System.Drawing.Size(745, 437);
+            this.pivotGridControl1.Size = new System.Drawing.Size(755, 439);
             this.pivotGridControl1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 437);
+            this.ClientSize = new System.Drawing.Size(755, 439);
             this.Controls.Add(this.pivotGridControl1);
             this.Name = "Form1";
-            this.Text = "DevExpress WinForms Application";
+            this.Text = "WinForms Pivot Grid OLAP Example";
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             this.ResumeLayout(false);
 
