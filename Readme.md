@@ -24,6 +24,6 @@ Use the invoked <a href="https://docs.devexpress.com/WindowsForms/1805">Customiz
 
 For more information refer to the  <a href="https://docs.devexpress.com/WindowsForms/11775">OLAP Data Source</a> online help topic.
 
-![screenshot](https://github.com/DevExpress-Examples/how-to-connect-a-pivot-grid-to-an-olap-datasource-t344546/blob/18.2.3%2B/images/screenshot.png)
+![screenshot](https://github.com/DevExpress-Examples/how-to-connect-a-pivot-grid-to-an-olap-datasource-t344546/blob/18.2.4%2B/images/screenshot.png)
 
 
