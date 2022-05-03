@@ -50,20 +50,20 @@ Namespace WinOlapRetrieveFieldsExample
 
 			' Create a field, specify a query expression to obtain data and a caption to display it in the Customization form.
 			Dim fieldCountry As PivotGridFieldBase = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea)
-			fieldCountry.OLAPExpression = "[Customer].[Country].[Country]"
+			fieldCountry.DataBinding = New DataSourceColumnBinding("[Customer].[Country].[Country]")
 			fieldCountry.OLAPDimensionCaption = "Location"
 
 			Dim fieldCity As PivotGridFieldBase = pivotGridControl1.Fields.Add("City", PivotArea.RowArea)
-			fieldCity.OLAPExpression = "[Customer].[City].[City]"
+			fieldCity.DataBinding = New DataSourceColumnBinding("[Customer].[City].[City]")
 			fieldCity.OLAPDimensionCaption = "Location"
 
 			Dim measureField As New PivotGridField() With {.Caption = "Cleared Amount", .Area = PivotArea.DataArea}
-			measureField.OLAPExpression = "[Measures].[Internet Sales Amount] * 0.87"
+			measureField.DataBinding = New OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87")
 			measureField.OLAPDimensionCaption = "Sales"
 			pivotGridControl1.Fields.Add(measureField)
 
 			Dim fieldTop10 As PivotGridFieldBase = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea)
-			fieldTop10.OLAPExpression = "TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, [Measures].[Internet Sales Amount])"
+			fieldTop10.DataBinding = New OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, [Measures].[Internet Sales Amount])")
 			fieldTop10.OLAPDimensionCaption = "Top"
 			fieldTop10.Visible = False
 

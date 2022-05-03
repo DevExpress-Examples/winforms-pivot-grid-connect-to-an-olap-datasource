@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup2 = new DevExpress.XtraPivotGrid.PivotGridGroup();
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btnRetrieveFields = new DevExpress.XtraEditors.SimpleButton();
             this.btnCreateUnboundFields = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRetrieveFields = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -41,10 +40,6 @@
             // pivotGridControl1
             // 
             this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            pivotGridGroup2.Caption = "Date.Fiscal";
-            pivotGridGroup2.Hierarchy = "[Date].[Fiscal]";
-            this.pivotGridControl1.Groups.AddRange(new DevExpress.XtraPivotGrid.PivotGridGroup[] {
-            pivotGridGroup2});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 52);
             this.pivotGridControl1.Name = "pivotGridControl1";
             this.pivotGridControl1.OLAPConnectionString = "";
@@ -62,16 +57,6 @@
             this.panelControl1.Size = new System.Drawing.Size(755, 52);
             this.panelControl1.TabIndex = 1;
             // 
-            // btnRetrieveFields
-            // 
-            this.btnRetrieveFields.AccessibleDescription = "            pivotGridControl1.Fields[\"[Customer].[Country].[Country]\"]";
-            this.btnRetrieveFields.Location = new System.Drawing.Point(30, 12);
-            this.btnRetrieveFields.Name = "btnRetrieveFields";
-            this.btnRetrieveFields.Size = new System.Drawing.Size(107, 23);
-            this.btnRetrieveFields.TabIndex = 0;
-            this.btnRetrieveFields.Text = "Retrieve Fields";
-            this.btnRetrieveFields.Click += new System.EventHandler(this.btnRetrieveFields_Click);
-            // 
             // btnCreateUnboundFields
             // 
             this.btnCreateUnboundFields.AccessibleDescription = "";
@@ -81,6 +66,16 @@
             this.btnCreateUnboundFields.TabIndex = 1;
             this.btnCreateUnboundFields.Text = "Create Fields";
             this.btnCreateUnboundFields.Click += new System.EventHandler(this.btnCreateFields_Click);
+            // 
+            // btnRetrieveFields
+            // 
+            this.btnRetrieveFields.AccessibleDescription = "            pivotGridControl1.Fields[\"[Customer].[Country].[Country]\"]";
+            this.btnRetrieveFields.Location = new System.Drawing.Point(30, 12);
+            this.btnRetrieveFields.Name = "btnRetrieveFields";
+            this.btnRetrieveFields.Size = new System.Drawing.Size(107, 23);
+            this.btnRetrieveFields.TabIndex = 0;
+            this.btnRetrieveFields.Text = "Retrieve Fields";
+            this.btnRetrieveFields.Click += new System.EventHandler(this.btnRetrieveFields_Click);
             // 
             // Form1
             // 
