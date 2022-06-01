@@ -23,6 +23,9 @@ namespace WinOlapRetrieveFieldsExample {
         private void btnRetrieveFields_Click(object sender, System.EventArgs e) {
             // Retrieve fields.
             pivotGridControl1.RetrieveFields(PivotArea.ColumnArea, false);
+            foreach (PivotGridField field in pivotGridControl1.Fields){
+                field.Name = "field" + (field.DataBinding as DataSourceColumnBinding).ColumnName;
+            }
 
             // Add fields from the Field List to the specified area to create a report.
             pivotGridControl1.BeginUpdate();
@@ -51,20 +54,24 @@ namespace WinOlapRetrieveFieldsExample {
             PivotGridField fieldCountry = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea);
             fieldCountry.DataBinding = new DataSourceColumnBinding("[Customer].[Country].[Country]");
             fieldCountry.OLAPDimensionCaption = "Location";
+            fieldCountry.Name = "fieldCountry";
 
             PivotGridField fieldCity = pivotGridControl1.Fields.Add("City", PivotArea.RowArea);
             fieldCity.DataBinding = new DataSourceColumnBinding("[Customer].[City].[City]");
             fieldCity.OLAPDimensionCaption = "Location";
+            fieldCity.Name = "fieldCity";
 
             PivotGridField measureField = new PivotGridField() { Caption = "Cleared Amount", Area = PivotArea.DataArea };
             measureField.DataBinding = new OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87");
             measureField.OLAPDimensionCaption = "Sales";
+            measureField.Name = "fieldInternetSalesAmount";
             pivotGridControl1.Fields.Add(measureField);
 
             PivotGridFieldBase fieldTop10 = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea);
             fieldTop10.DataBinding = new OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, [Measures].[Internet Sales Amount])");
             fieldTop10.OLAPDimensionCaption = "Top";
             fieldTop10.Visible = false;;
+            fieldTop10.Name = "fieldTopcount";
 
             pivotGridControl1.EndUpdate();
 
