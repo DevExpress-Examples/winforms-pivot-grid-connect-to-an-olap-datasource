@@ -24,6 +24,9 @@ Namespace WinOlapRetrieveFieldsExample
 		Private Sub btnRetrieveFields_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRetrieveFields.Click
 			' Retrieve fields.
 			pivotGridControl1.RetrieveFields(PivotArea.ColumnArea, False)
+			For Each field As PivotGridField In pivotGridControl1.Fields
+				field.Name = "field" & (TryCast(field.DataBinding, DataSourceColumnBinding)).ColumnName
+			Next field
 
 			' Add fields from the Field List to the specified area to create a report.
 			pivotGridControl1.BeginUpdate()
@@ -52,20 +55,24 @@ Namespace WinOlapRetrieveFieldsExample
 			Dim fieldCountry As PivotGridFieldBase = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea)
 			fieldCountry.DataBinding = New DataSourceColumnBinding("[Customer].[Country].[Country]")
 			fieldCountry.OLAPDimensionCaption = "Location"
+			fieldCountry.Name = "fieldCountry"
 
 			Dim fieldCity As PivotGridFieldBase = pivotGridControl1.Fields.Add("City", PivotArea.RowArea)
 			fieldCity.DataBinding = New DataSourceColumnBinding("[Customer].[City].[City]")
 			fieldCity.OLAPDimensionCaption = "Location"
+			fieldCity.Name = "fieldCity"
 
 			Dim measureField As New PivotGridField() With {.Caption = "Cleared Amount", .Area = PivotArea.DataArea}
 			measureField.DataBinding = New OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87")
 			measureField.OLAPDimensionCaption = "Sales"
+			measureField.Name = "fieldInternetSalesAmount"
 			pivotGridControl1.Fields.Add(measureField)
 
 			Dim fieldTop10 As PivotGridFieldBase = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea)
 			fieldTop10.DataBinding = New OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, [Measures].[Internet Sales Amount])")
 			fieldTop10.OLAPDimensionCaption = "Top"
 			fieldTop10.Visible = False
+			fieldTop10.Name = "fieldTopCount"
 
 			pivotGridControl1.EndUpdate()
 
