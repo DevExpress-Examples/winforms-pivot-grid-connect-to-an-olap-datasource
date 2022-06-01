@@ -51,7 +51,7 @@ Namespace WinOlapRetrieveFieldsExample
 			pivotGridControl1.BeginUpdate()
 			pivotGridControl1.Fields.Clear()
 
-			' Create a field, specify a query expression to obtain data and a caption to display it in the Customization form.
+			' Create a field, specify its settings and bind the field to a measure or dimension.
 			Dim fieldCountry As PivotGridFieldBase = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea)
 			fieldCountry.DataBinding = New DataSourceColumnBinding("[Customer].[Country].[Country]")
 			fieldCountry.OLAPDimensionCaption = "Location"
