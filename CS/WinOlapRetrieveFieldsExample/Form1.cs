@@ -1,12 +1,9 @@
 ﻿using DevExpress.XtraPivotGrid;
 using DevExpress.XtraPivotGrid.Customization;
 
-namespace WinOlapRetrieveFieldsExample
-{
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
-    {
-        public Form1()
-        {
+namespace WinOlapRetrieveFieldsExample {
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm {
+        public Form1() {
             InitializeComponent();
             // Specify the OLAP connection settings.
             pivotGridControl1.OLAPDataProvider = OLAPDataProvider.Adomd;
@@ -23,8 +20,7 @@ namespace WinOlapRetrieveFieldsExample
             pivotGridControl1.FieldsCustomization();
         }
 
-        private void btnRetrieveFields_Click(object sender, System.EventArgs e)
-        {
+        private void btnRetrieveFields_Click(object sender, System.EventArgs e) {
             // Retrieve fields.
             pivotGridControl1.RetrieveFields(PivotArea.ColumnArea, false);
 
@@ -47,8 +43,7 @@ namespace WinOlapRetrieveFieldsExample
             pivotGridControl1.FieldsCustomization();
         }
 
-        private void btnCreateFields_Click(object sender, System.EventArgs e)
-        {
+        private void btnCreateFields_Click(object sender, System.EventArgs e) {
             pivotGridControl1.BeginUpdate();
             pivotGridControl1.Fields.Clear();
 
