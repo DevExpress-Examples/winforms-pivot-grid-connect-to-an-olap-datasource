@@ -50,7 +50,7 @@ namespace WinOlapRetrieveFieldsExample {
             pivotGridControl1.BeginUpdate();
             pivotGridControl1.Fields.Clear();
 
-            // Create a field, specify a query expression to obtain data and a caption to display it in the Customization form.
+            // Create a field, specify its settings and bind the field to a measure or dimension.
             PivotGridField fieldCountry = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea);
             fieldCountry.DataBinding = new DataSourceColumnBinding("[Customer].[Country].[Country]");
             fieldCountry.OLAPDimensionCaption = "Location";
@@ -61,14 +61,16 @@ namespace WinOlapRetrieveFieldsExample {
             fieldCity.OLAPDimensionCaption = "Location";
             fieldCity.Name = "fieldCity";
 
-            PivotGridField measureField = new PivotGridField() { Caption = "Cleared Amount", Area = PivotArea.DataArea };
+            PivotGridField measureField = new PivotGridField() { Caption = "Cleared Amount", 
+               Area = PivotArea.DataArea };
             measureField.DataBinding = new OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87");
             measureField.OLAPDimensionCaption = "Sales";
             measureField.Name = "fieldInternetSalesAmount";
             pivotGridControl1.Fields.Add(measureField);
 
             PivotGridFieldBase fieldTop10 = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea);
-            fieldTop10.DataBinding = new OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, [Measures].[Internet Sales Amount])");
+            fieldTop10.DataBinding = new OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, " +
+                "[Measures].[Internet Sales Amount])");
             fieldTop10.OLAPDimensionCaption = "Top";
             fieldTop10.Visible = false;;
             fieldTop10.Name = "fieldTopcount";
