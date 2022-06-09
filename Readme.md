@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# How to Connect a Pivot Grid to an OLAP Datasource
+# Piovt Grid for WinForms - How to Connect a Pivot Grid to an OLAP Datasource
 
 This example demonstrates how to specify connection settings and create fields that are bound to measures and dimensions of the cube on the OLAP server (Microsoft Analysis Services) to display data in the [Pivot Grid](https://docs.devexpress.com/WindowsForms/3409/controls-and-libraries/pivot-grid). 
 
