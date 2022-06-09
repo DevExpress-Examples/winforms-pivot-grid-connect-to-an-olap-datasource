@@ -27,7 +27,7 @@ OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Se
 
 3. Create Pivot Grid fields for OLAP measures and dimensions in following ways: 
 
-- Use the [PivotGridControl.RetrieveFields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.RetrieveFields(DevExpress.XtraPivotGrid.PivotArea-System.Boolean)) method that create fields, moves them to the specified area, and makes them hidden. 
+- Use the [PivotGridControl.RetrieveFields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.RetrieveFields(DevExpress.XtraPivotGrid.PivotArea-System.Boolean)) method, which creates fields, moves them to the specified area, and hides them.
 
 - Use [DataSourceColumnBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.DataSourceColumnBinding)) and [OLAPExpressionBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.OLAPExpressionBinding) to bind Pivot Grid fields to data.
 
