@@ -2,15 +2,18 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T344546)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
+
+# How to Connect a Pivot Grid to an OLAP Datasource
+
+This example demonstrates how to specify connection settings and create fields that are bound to measures and dimensions of the cube on the OLAP server (Microsoft Analysis Services) to display data in the [Pivot Grid](https://docs.devexpress.com/WindowsForms/3409/controls-and-libraries/pivot-grid). 
+
 <!-- default file list -->
-*Files to look at*:
+## Files to Look at
 
 * [Form1.cs](./CS/WinOlapRetrieveFieldsExample/Form1.cs) (VB: [Form1.vb](./VB/WinOlapRetrieveFieldsExample/Form1.vb))
 <!-- default file list end -->
-# How to Connect a Pivot Grid to an OLAP Datasource
 
-
-This example demonstrates how to specify connection settings and create fields that are bound to measures and dimensions of the cube on the OLAP server (Microsoft Analysis Services) to display data in the [Pivot Grid](https://docs.devexpress.com/WindowsForms/3409/controls-and-libraries/pivot-grid). 
+## Example Overview
 
 Follow the steps below to bind the Pivot Grid control to an OLAP cube:
 
