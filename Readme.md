@@ -25,7 +25,8 @@ Follow the steps below to bind the Pivot Grid control to an OLAP cube:
 OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll;Initial catalog=Adventure Works DW Standard Edition;Cube name=Adventure Works;Query Timeout=100;"
 ``` 
 
-3. Create Pivot Grid fields for OLAP measures and dimensions in following ways: 
+3. Create Pivot Grid fields for OLAP measures and dimensions in one of the following ways: 
+
 
 - Use the [PivotGridControl.RetrieveFields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.RetrieveFields(DevExpress.XtraPivotGrid.PivotArea-System.Boolean)) method, which creates fields, moves them to the specified area, and hides them.
 
