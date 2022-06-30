@@ -19,6 +19,8 @@ Namespace WinOlapRetrieveFieldsExample
 			pivotGridControl1.OptionsCustomization.CustomizationFormStyle = CustomizationFormStyle.Excel2007
 			' Invoke the Customization Form.
 			pivotGridControl1.FieldsCustomization()
+			pivotGridControl1.RetrieveFieldsAsync()
+			pivotGridControl1.GetFieldList()
 		End Sub
 
 		Private Sub btnRetrieveFields_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRetrieveFields.Click
