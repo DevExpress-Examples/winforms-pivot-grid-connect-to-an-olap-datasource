@@ -31,7 +31,6 @@ Namespace WinOlapRetrieveFieldsExample
             ' Add fields from the Field List to the specified area to create a report.
             pivotGridControl1.BeginUpdate()
             pivotGridControl1.Fields("[Customer].[Country].[Country]").Area = PivotArea.RowArea
-            pivotGridControl1.Fields("[Customer].[Country].[Country]").OLAPDimensionCaption = "TEST"
             pivotGridControl1.Fields("[Customer].[Country].[Country]").Visible = True
             pivotGridControl1.Fields("[Customer].[City].[City]").Area = PivotArea.RowArea
             pivotGridControl1.Fields("[Customer].[City].[City]").Visible = True
@@ -51,20 +50,16 @@ Namespace WinOlapRetrieveFieldsExample
             ' Create a field, specify its settings and bind the field to a measure or dimension.
             Dim fieldCountry As PivotGridField = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea)
             fieldCountry.DataBinding = New DataSourceColumnBinding("[Customer].[Country].[Country]")
-            fieldCountry.OLAPDimensionCaption = "Location"
             fieldCountry.Name = "fieldCountry"
             Dim fieldCity As PivotGridField = pivotGridControl1.Fields.Add("City", PivotArea.RowArea)
             fieldCity.DataBinding = New DataSourceColumnBinding("[Customer].[City].[City]")
-            fieldCity.OLAPDimensionCaption = "Location"
             fieldCity.Name = "fieldCity"
             Dim measureField As PivotGridField = New PivotGridField() With {.Caption = "Cleared Amount", .Area = PivotArea.DataArea}
             measureField.DataBinding = New OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87")
-            measureField.OLAPDimensionCaption = "Sales"
             measureField.Name = "fieldInternetSalesAmount"
             pivotGridControl1.Fields.Add(measureField)
             Dim fieldTop10 As PivotGridFieldBase = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea)
             fieldTop10.DataBinding = New OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, " & "[Measures].[Internet Sales Amount])")
-            fieldTop10.OLAPDimensionCaption = "Top"
             fieldTop10.Visible = False
             fieldTop10.Name = "fieldTopcount"
             pivotGridControl1.EndUpdate()
