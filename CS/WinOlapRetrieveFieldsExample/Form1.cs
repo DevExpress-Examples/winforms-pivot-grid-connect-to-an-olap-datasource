@@ -30,7 +30,6 @@ namespace WinOlapRetrieveFieldsExample {
             // Add fields from the Field List to the specified area to create a report.
             pivotGridControl1.BeginUpdate();
             pivotGridControl1.Fields["[Customer].[Country].[Country]"].Area = PivotArea.RowArea;
-            pivotGridControl1.Fields["[Customer].[Country].[Country]"].OLAPDimensionCaption = "TEST";
             pivotGridControl1.Fields["[Customer].[Country].[Country]"].Visible = true;
             pivotGridControl1.Fields["[Customer].[City].[City]"].Area = PivotArea.RowArea;
             pivotGridControl1.Fields["[Customer].[City].[City]"].Visible = true;
@@ -53,25 +52,21 @@ namespace WinOlapRetrieveFieldsExample {
             // Create a field, specify its settings and bind the field to a measure or dimension.
             PivotGridField fieldCountry = pivotGridControl1.Fields.Add("Country", PivotArea.RowArea);
             fieldCountry.DataBinding = new DataSourceColumnBinding("[Customer].[Country].[Country]");
-            fieldCountry.OLAPDimensionCaption = "Location";
             fieldCountry.Name = "fieldCountry";
 
             PivotGridField fieldCity = pivotGridControl1.Fields.Add("City", PivotArea.RowArea);
             fieldCity.DataBinding = new DataSourceColumnBinding("[Customer].[City].[City]");
-            fieldCity.OLAPDimensionCaption = "Location";
             fieldCity.Name = "fieldCity";
 
             PivotGridField measureField = new PivotGridField() { Caption = "Cleared Amount", 
                Area = PivotArea.DataArea };
             measureField.DataBinding = new OLAPExpressionBinding("[Measures].[Internet Sales Amount] * 0.87");
-            measureField.OLAPDimensionCaption = "Sales";
             measureField.Name = "fieldInternetSalesAmount";
             pivotGridControl1.Fields.Add(measureField);
 
             PivotGridFieldBase fieldTop10 = pivotGridControl1.Fields.Add("Top10", PivotArea.ColumnArea);
             fieldTop10.DataBinding = new OLAPExpressionBinding("TOPCOUNT([Date].[Date].[Date].MEMBERS, 10, " +
                 "[Measures].[Internet Sales Amount])");
-            fieldTop10.OLAPDimensionCaption = "Top";
             fieldTop10.Visible = false;;
             fieldTop10.Name = "fieldTopcount";
 
