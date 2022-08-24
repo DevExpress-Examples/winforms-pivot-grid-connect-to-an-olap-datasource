@@ -8,7 +8,7 @@
 
 * [Form1.cs](./CS/WinOlapRetrieveFieldsExample/Form1.cs) (VB: [Form1.vb](./VB/WinOlapRetrieveFieldsExample/Form1.vb))
 <!-- default file list end -->
-# How to connect a Pivot Grid to an OLAP datasource
+# Pivot Grid for WinForms - How to connect a Pivot Grid to an OLAP datasource
 
 
 If you have a cube on the OLAP server (Microsoft Analysis Services), you can view its data using the [Pivot Grid](https://docs.devexpress.com/WindowsForms/3409/controls-and-libraries/pivot-grid). This example demonstrates how to specify connection settings and create fields that represent OLAP measures and dimensions.
@@ -29,7 +29,15 @@ Use the invoked [Customization Form](https://docs.devexpress.com/WindowsForms/18
 
 For more information refer to the [OLAP Data Source](https://docs.devexpress.com/WindowsForms/11775/controls-and-libraries/pivot-grid/binding-to-data/olap-data-source) online help topic.
 
-
 ![screenshot](images/screenshot.png)
 
+## Documentation
+
+- [OLAP Mode](https://docs.devexpress.com/CoreLibraries/403809/devexpress-pivot-grid-core-library/pivot-grid-modes/olap-mode)
+- [Binding to Data](https://docs.devexpress.com/WindowsForms/1842/controls-and-libraries/pivot-grid/binding-to-data)
+
+## More Examples 
+
+- [WPF Pivot Grid - Bind a PivotGrid to an OLAP Cube (.NET 6.0)](https://github.com/DevExpress-Examples/wpf-pivot-grid-connect-to-an-olap-cube-net6)
+- [ASP.NET Pivot Grid - Bind a Pivot Grid to an OLAP Cube at Design Time](https://github.com/DevExpress-Examples/aspnet-pivot-grid-getting-started-bind-a-pivot-grid-to-an-olap-cube-runtime-sample-t540972)
 
