@@ -3,11 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T344546)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [Form1.cs](./CS/WinOlapRetrieveFieldsExample/Form1.cs) (VB: [Form1.vb](./VB/WinOlapRetrieveFieldsExample/Form1.vb))
-<!-- default file list end -->
 # Pivot Grid for WinForms - How to connect a Pivot Grid to an OLAP datasource
 
 
@@ -30,6 +25,10 @@ Use the invoked [Customization Form](https://docs.devexpress.com/WindowsForms/18
 For more information refer to the [OLAP Data Source](https://docs.devexpress.com/WindowsForms/11775/controls-and-libraries/pivot-grid/binding-to-data/olap-data-source) online help topic.
 
 ![screenshot](images/screenshot.png)
+
+## Files to Look At:
+
+* [Form1.cs](./CS/WinOlapRetrieveFieldsExample/Form1.cs) (VB: [Form1.vb](./VB/WinOlapRetrieveFieldsExample/Form1.vb))
 
 ## Documentation
 
