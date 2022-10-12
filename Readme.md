@@ -27,7 +27,7 @@ You can create Pivot Grid fields and bind them to measures and dimensions in the
 
 - Create a [PivotGridField](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridField) object and add it to the [PivotGridControl.Fields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.Fields) collection. Then, use [DataSourceColumnBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.DataSourceColumnBinding) and [OLAPExpressionBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.OLAPExpressionBinding) to bind the field to data.
 
-Specify the value of the [PivotGridFieldBase.Name](xref:DevExpress.XtraPivotGrid.PivotGridFieldBase.Name) property for each field when you create Pivot Grid fields. You can use this value to determine fields in a stored layout.
+Specify the value of the [PivotGridFieldBase.Name](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.Name) property for each field when you create Pivot Grid fields. You can use this value to determine fields in a stored layout.
 
 Use the following properties to specify field location and visibility:
 
