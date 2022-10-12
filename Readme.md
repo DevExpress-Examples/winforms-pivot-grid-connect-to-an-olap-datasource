@@ -1,32 +1,42 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128581726/22.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T344546)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 # Pivot Grid for WinForms - How to Connect the Pivot Grid to an OLAP Data Source
 
+This example demonstrates how to add connection settings to the Adventure Works cube on the OLAP server.
 
-If you have a cube on the OLAP server (Microsoft Analysis Services), you can view its data using the [Pivot Grid](https://docs.devexpress.com/WindowsForms/3409/controls-and-libraries/pivot-grid). This example demonstrates how to specify connection settings and create fields that represent OLAP measures and dimensions.
-
-To bind the Pivot Grid control to an OLAP cube, follow the steps below.
-
-1. Set **ADOMD** as a data provider using the [PivotGridControl.OLAPDataProvider](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPDataProvider) property.
-2. Specify connection settings to the server using the [PivotGridControl.OLAPConnectionString](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPConnectionString) property. The connection string used in the example is shown below.
-
-```
-OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll;Initial catalog=Adventure Works DW Standard Edition;Cube name=Adventure Works;Query Timeout=100;"
-``` 
-
-3. Create fields for all the measures and dimension in the bound OLAP cube. Use the [PivotGridControl.RetrieveFields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.RetrieveFields(DevExpress.XtraPivotGrid.PivotArea-System.Boolean)) method that creates fields, moves them to the specified area and makes them hidden. Another option is creating a new field and specifying its [OLAPExpression](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.OLAPExpression) property.
-4. Place the fields within the Pivot Grid Control areas ([Data Header Area](https://docs.devexpress.com/WindowsForms/1688/controls-and-libraries/pivot-grid/ui-elements/data-header-area), [Column Header Area](https://docs.devexpress.com/WindowsForms/1686/controls-and-libraries/pivot-grid/ui-elements/column-header-area), [Row Header Area](https://docs.devexpress.com/WindowsForms/1685/controls-and-libraries/pivot-grid/ui-elements/row-header-area) or [Filter Header](https://docs.devexpress.com/WindowsForms/1684/controls-and-libraries/pivot-grid/ui-elements/filter-header-area) as required and make them visible.
-
-Use the invoked [Customization Form](https://docs.devexpress.com/WindowsForms/1805) to arrange fields.
-
-For more information refer to the [OLAP Data Source](https://docs.devexpress.com/WindowsForms/11775/controls-and-libraries/pivot-grid/binding-to-data/olap-data-source) online help topic.
 
 ![screenshot](images/screenshot.png)
 
-## Files to Look At:
+To bind the Pivot Grid control to an OLAP cube, follow the steps below.
+
+1. Set the [PivotGridControl.OLAPDataProvider](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPDataProvider) property to ADOMD.
+2. Specify connection settings in the [PivotGridControl.OLAPConnectionString](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPConnectionString) property. The following connection string is used in this example:
+    ```
+    OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll; +
+                         "Initial catalog=Adventure Works DW Standard Edition;Cube name=Adventure Works;Query Timeout=100;"
+    ``` 
+    Note that a valid connection string should include the following parameters: Provider, Data Source, Initial Catalog, and Cube Name.
+
+
+You can create Pivot Grid fields and bind them to measures and dimensions in the OLAP cube in the following ways:
+
+- Call the [PivotGridControl.RetrieveFields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.RetrieveFields(DevExpress.XtraPivotGrid.PivotArea-System.Boolean)) method to create Pivot Grid fields for all columns in a data source and add them to the field's collection. Use the [PivotGridControl.GetFieldList](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.GetFieldList) method to obtain a list of fields available in a bound data source.
+
+- Create a [PivotGridField](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridField) object and add it to the [PivotGridControl.Fields](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.Fields) collection. Then, use [DataSourceColumnBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.DataSourceColumnBinding) and [OLAPExpressionBinding](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.OLAPExpressionBinding) to bind the field to data.
+
+Specify the value of the [PivotGridFieldBase.Name](xref:DevExpress.XtraPivotGrid.PivotGridFieldBase.Name) property for each field when you create Pivot Grid fields. You can use this value to determine fields in a stored layout.
+
+Use the following properties to specify field location and visibility:
+
+- [PivotGridFieldBase.Area](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.Area)
+- [PivotGridFieldBase.AreaIndex](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.AreaIndex)
+- [PivotGridFieldBase.Visible](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotGridFieldBase.Visible)
+
+Use the invoked [Customization Form](https://docs.devexpress.com/WindowsForms/1805) to arrange fields.
+
+## Files to Review
 
 * [Form1.cs](./CS/WinOlapRetrieveFieldsExample/Form1.cs) (VB: [Form1.vb](./VB/WinOlapRetrieveFieldsExample/Form1.vb))
 
