@@ -4,7 +4,8 @@
 <!-- default badges end -->
 # Pivot Grid for WinForms - How to Connect the Pivot Grid to an OLAP Data Source
 
-This example demonstrates how to specify connection settings to the Adventure Works cube on the OLAP server.
+This example demonstrates how to add connection settings to the Adventure Works cube on the OLAP server.
+
 
 ![screenshot](images/screenshot.png)
 
