@@ -13,8 +13,8 @@ To bind the Pivot Grid control to an OLAP cube, follow the steps below.
 1. Set the [PivotGridControl.OLAPDataProvider](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPDataProvider) property to ADOMD.
 2. Specify connection settings in the [PivotGridControl.OLAPConnectionString](https://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.OLAPConnectionString) property. The following connection string is used in this example:
     ```
-    OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll;Initial 
-    catalog=Adventure Works DW Standard Edition;Cube name=Adventure Works;Query Timeout=100;"
+    OlapConnectionString="Provider=MSOLAP;Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll; +
+                         "Initial catalog=Adventure Works DW Standard Edition;Cube name=Adventure Works;Query Timeout=100;"
     ``` 
     Note that a valid connection string should provide the following parameters: Provider, Data Source, Initial Catalog, Cube Name.
 
