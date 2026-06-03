@@ -11,7 +11,7 @@ Namespace WinOlapRetrieveFieldsExample
             ' Specify the OLAP connection settings.
             pivotGridControl1.OLAPDataProvider = OLAPDataProvider.Adomd
             pivotGridControl1.OLAPConnectionString = "Provider=MSOLAP;
-                Data Source=http://demos.devexpress.com/Services/OLAP/msmdpump.dll; 
+                Data Source=https://demos.devexpress.com/Services/OLAP/msmdpump.dll; 
                 Initial catalog=Adventure Works DW Standard Edition;
                 Cube name=Adventure Works;
                 Query Timeout=100;"
